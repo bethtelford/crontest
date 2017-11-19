@@ -46,16 +46,14 @@ let busyScheduleStart = new CronJob({
     label = 'busy';
     shortInterval.start();
   },
-  start: true,
-  timeZone: 'America/Boise'
+  start: true
 })
 let busyScheduleStop = new CronJob({
   cronTime: '0 45 9,13,17 * * 1-5',
   onTick: _ => {
     shortInterval.stop();
   },
-  start: true,
-  timeZone: 'America/Boise'
+  start: true
 })
 
 
@@ -65,16 +63,14 @@ let slowScheduleStart = new CronJob({
     label = 'slow';
     longInterval.start();
   },
-  start: true,
-  timeZone: 'America/Boise'
+  start: true
 })
 let slowScheduleStop = new CronJob({
   cronTime: '0 20 12,16 * * 1-5',
   onTick: _ => {
     longInterval.stop();
   },
-  start: true,
-  timeZone: 'America/Boise'
+  start: true
 })
 
 // After hours and weekend jobs
@@ -84,8 +80,7 @@ let afterHours = new CronJob({
     label = 'after hours';
     timePunch();
   },
-  start: true,
-  timeZone: 'America/Boise'
+  start: true
 })
 let weekend = new CronJob({
   cronTime: '0 0 * * * 6-0',
@@ -94,7 +89,6 @@ let weekend = new CronJob({
     timePunch();
   },
   start: true,
-  timeZone: 'America/Boise'
 })
 
 

@@ -75,7 +75,7 @@ let slowScheduleStop = new CronJob({
 
 // After hours and weekend jobs
 let afterHours = new CronJob({
-  cronTime: '0 0 18-7 * * 1-5',
+  cronTime: '0 0 0-7,18-23 * * 1-5',
   onTick: _ => {
     label = 'after hours';
     timePunch();
@@ -83,7 +83,7 @@ let afterHours = new CronJob({
   start: true
 })
 let weekend = new CronJob({
-  cronTime: '0 0 * * * 6-0',
+  cronTime: '0 0 * * * 0,6',
   onTick: _ => {
     label = 'weekend';
     timePunch();
